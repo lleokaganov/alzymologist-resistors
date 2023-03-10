@@ -29,9 +29,56 @@ var M96={
 '100000':'F'
 };
 
+
+
 function GO(preurl){
     init_tip(document.querySelector('#mdiv'));
     if(preurl) RZ.resrc(preurl);
+
+    // =========================================
+    var canvas = dom('divwebp');
+    var c = canvas.getContext('2d');
+    c.fillStyle = "grey";
+    c.strokeStyle = "black";
+    c.lineWidth = 5; // Ширина линии
+    c.lineCap = "square";
+
+    // R1
+    c.strokeRect(70, 70, 70, 150);
+    c.fillRect(72, 72, 66, 146);
+    // R2
+    c.strokeRect(70, 315, 70, 150);
+    c.fillRect(72, 317, 66, 146);
+
+    // верхняя хня
+    c.beginPath();
+    c.moveTo(70+70/2, 70-2);
+    c.lineTo(70+70/2, 6);
+    c.lineTo(220, 6);
+    c.stroke();
+
+    // Перемычка между R1 и R2
+    c.moveTo(70+70/2, 220+2);
+    c.lineTo(70+70/2, 315-2);
+    c.stroke();
+    // и ея кружочек
+    c.beginPath();
+    c.fillStyle = "black";
+    c.arc(105, 266, 6, 0, 180);
+    c.fill();
+    c.stroke();
+    // и ея контактик
+    c.moveTo(105,266);
+    c.lineTo(221,266);
+    c.stroke();
+
+    // Нижняя хня
+    c.moveTo(70+70/2, 315+150+2);
+    c.lineTo(70+70/2, 522);
+    c.lineTo(0, 522);
+    c.lineTo(221, 522);
+    c.stroke();
+    // =========================================
 
     // Default
     var stab=dom('rtabselect').value; if(stab!='E96' && stab!='E24') dom('rtabselect').value='E26';
