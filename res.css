@@ -1,0 +1,43 @@
+#mdiv { position: relative; line-height:normal;font-size: 11px !important; background-color: #ddddd3; width:100%; padding:10px 5px 30px 5px; border-radius: 15px; }
+
+.rinz { position: relative; width:504px;height:566px; display:inline-block; margin-bottom:20px; }
+
+.ipower { position: absolute; font-size:10px; }
+
+.rin,.rin2 { position: absolute; font-size:40px; border: 2px solid transparent; background-color: white; }
+.rin { width:195px; }
+.rin2 { width:120px; }
+
+.bordERR { border: 2px solid red; }
+
+.buka { position:absolute; top:5px; left:5px; width:189px; color:#5c0303; font-size:10px; text-align:left; }
+
+.tolerance { position: absolute; bottom:178px;left:305px;color:#5c0303; font-size:23px; }
+.percV { font-size: 12px; padding: 0px; EEEmargin-top: -8px; background-color: black; }
+
+#rtabselect { position: absolute; bottom:16px;left:298px; font-size:30px; }
+
+#approxim { position: absolute; bottom:3px;left:4px; font-size:30px; }
+
+.tc { background-color:#1f1d1d;font-size:10px; text-align:center; }
+
+#mestabe { position: relative; display:inline-block; }
+#mestab { display:inline-block; }
+
+.rezistab { position: absolute; transform: rotate(-375deg); }
+
+#mdiv { vertical-align: top; display: inline-block; }
+
+.smdtext {
+  background-color: black;
+  border: none;
+  width: 93px;
+    font-size:38px;
+    font-family:monospace;
+    position:absolute;
+    top:14px;
+    left:38px;
+    color:white;
+}
+
+.smdimg { width:150px; }
