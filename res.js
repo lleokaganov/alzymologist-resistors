@@ -72,12 +72,22 @@ function GO(preurl){
     c.lineTo(221,266);
     c.stroke();
 
-    // Нижняя хня
+    // Нижняя палочка
     c.moveTo(70+70/2, 315+150+2);
     c.lineTo(70+70/2, 522);
-    c.lineTo(0, 522);
-    c.lineTo(221, 522);
     c.stroke();
+    // Земля
+    c.fillRect(70+70/2-18, 518, 36, 10);
+
+    // текст: R1 R2
+    c.font = "28px serif";
+    c.fillText("R1", 150, 70+85);
+    c.fillText("R2", 150, 315+85);
+    // текст: V s V out
+    c.font = "11px serif";
+    c.fillText("Vs", 120, 24);
+    c.fillText("Vout", 120, 286);
+
     // =========================================
 
     // Default
