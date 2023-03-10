@@ -54,7 +54,7 @@ function GO(preurl){
     c.beginPath();
     c.moveTo(70+70/2, 70-2);
     c.lineTo(70+70/2, 6);
-    c.lineTo(220, 6);
+    c.lineTo(148, 6);
     c.stroke();
 
     // Перемычка между R1 и R2
@@ -69,7 +69,7 @@ function GO(preurl){
     c.stroke();
     // и ея контактик
     c.moveTo(105,266);
-    c.lineTo(221,266);
+    c.lineTo(148,266);
     c.stroke();
 
     // Нижняя палочка
