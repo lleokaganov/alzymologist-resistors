@@ -525,8 +525,9 @@ function prColor(x) { x=1*x;
 }
 
 
+if(typeof(salert)=='undefined') {
 
-
+salert=function(s,nn) { alert(s); };
 idd=function(id){ return (typeof(id)=='object' ? id : ( document.getElementById(id) || false ) ) };
 zabil=function(id,text) { if(idd(id)) { idd(id).innerHTML=text; init_tip(idd(id)); } };
 
@@ -563,5 +564,4 @@ init_tip=function(w) { w=w||document;
    }
 };
 
-if(typeof(salert)=='undefined') { salert=function(s,nn) { alert(s); }; }
-else page_onstart.push('GO()');
+} else page_onstart.push('GO()');
