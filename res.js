@@ -116,7 +116,6 @@ var RZ={
 AllOK: function(){ RZ.OK('R1'); RZ.OK('R2'); RZ.OK('V1'); RZ.OK('V2'); },
 OK: function(x){ dom(x).classList.remove('bordERR'); /*dom(x).disabled=false; dom(x).setAttribute('mydisabled', 0);*/ },
 ER: function(x){ dom(x).classList.add('bordERR'); /*dom(x).disabled=true; dom(x).setAttribute('mydisabled',1);*/ },
-// b: function(x){ zabil('buka',vzyal('buka')+"<hr>"+x); },
 
 onf: function(x){ return; x.disabled=false; },
 onb: function(x){ return; x.disabled=(x.getAttribute('mydisabled')?true:false); },
@@ -371,7 +370,7 @@ Approximate: function(polle){
     }
     s+="</table>";
 
-    zabil('mestab',s);
+    todom('mestab',s);
     var w=dom('mestab').querySelectorAll("DIV");
     for(var e of w) if(e.innerHTML.replace(/[\-\%]/g,'')==minperc)
 e.style.color='white';
@@ -496,16 +495,10 @@ key: function(e) {
 };
 
 
-function dom(id){
-    if(typeof(id)=='object') return id || false;
-    if(id.indexOf(' ')>=0 || id.indexOf('#')>=0 || id.indexOf('.')>=0) return document.querySelector(id) || false;
-    return document.getElementById(id) || false;
-}
-
 function domon(id) { id=dom(id); if(id && id.style) id.style.display='block'; }
 function domoff(id) { id=dom(id); if(id && id.style) id.style.display='none'; }
 
-function todom(id,s) { id=dom(id); if(id) id.innerHTML=s; }
+function todom(id,s) { id=dom(id); if(id) { id.innerHTML=s; init_tip(id); } }
 function fromdom(id,s) { id=dom(id); return (id?id.innerHTML:''); }
 
 function domdel(id) { id=dom(id); if(id) setTimeout(function(){id.parentNode.removeChild(id);},10); }
@@ -528,8 +521,12 @@ function prColor(x) { x=1*x;
 if(typeof(salert)=='undefined') {
 
 salert=function(s,nn) { alert(s); };
-idd=function(id){ return (typeof(id)=='object' ? id : ( document.getElementById(id) || false ) ) };
-zabil=function(id,text) { if(idd(id)) { idd(id).innerHTML=text; init_tip(idd(id)); } };
+
+function dom(id){
+    if(typeof(id)=='object') return id || false;
+    if(id.indexOf(' ')>=0 || id.indexOf('#')>=0 || id.indexOf('.')>=0) return document.querySelector(id) || false;
+    return document.getElementById(id) || false;
+}
 
 f5_save=function(k,v){
     try { return window.localStorage&&window.localStorage.setItem?window.localStorage.setItem(k,v):false; } catch(e) { return err_store(e,arguments.callee.name); }
